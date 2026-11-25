@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Window background before Compose draws. The full palette lives in HoloColors.kt. -->
+    <color name="pitch_black">#FF050508</color>
+</resources>

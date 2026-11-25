@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Module A: Neural Link Calibration permissions -->
+    <!-- Special-access permission; granted via Settings.ACTION_MANAGE_WRITE_SETTINGS. -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <!-- Optional: Relic Malfunction glitch banner overlay. -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Install-time permission for AlarmClock.ACTION_SET_ALARM. -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <!-- Optional: populates the Holocall contacts widget. -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <!-- Module B: haptics -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- Module C: launcher -->
+    <uses-permission android:name="android.permission.REQUEST_DELETE_PACKAGES" />
+
+    <!--
+        Package visibility (API 30+): a launcher only needs to see launchable activities
+        plus the default handlers used by the dock. This avoids QUERY_ALL_PACKAGES.
+    -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.DIAL" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.SENDTO" />
+            <data android:scheme="smsto" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.STILL_IMAGE_CAMERA" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <application
+        android:name=".HoloApp"
+        android:allowBackup="true"
+        android:enableOnBackInvokedCallback="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HoloOS"
+        tools:targetApi="35">
+
+        <!-- Setup wizard / control hub (Calibration, Audio, Manual Overrides). -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- The HUD home screen. Becomes active once the user grants RoleManager.ROLE_HOME. -->
+        <activity
+            android:name=".feature.launcher.LauncherActivity"
+            android:clearTaskOnLaunch="true"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout|smallestScreenSize|uiMode"
+            android:excludeFromRecents="true"
+            android:exported="true"
+            android:label="@string/launcher_label"
+            android:launchMode="singleTask"
+            android:resumeWhilePausing="true"
+            android:stateNotNeeded="true"
+            android:taskAffinity=""
+            android:theme="@style/Theme.HoloOS.Launcher"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!--
+            Per-app audio cues (Eddie Transfer, New Gig). While enabled, the system keeps this
+            service bound, which also keeps the power-event receiver below alive.
+        -->
+        <service
+            android:name=".service.notification.HoloNotificationListener"
+            android:exported="true"
+            android:label="@string/notification_listener_label"
+            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
+            <intent-filter>
+                <action android:name="android.service.notification.NotificationListenerService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.notification.default_filter_types"
+                android:value="conversations|alerting" />
+        </service>
+
+        <!-- Module C: Night City rain/grid live wallpaper. -->
+        <service
+            android:name=".service.wallpaper.HoloWallpaperService"
+            android:exported="true"
+            android:label="@string/wallpaper_label"
+            android:permission="android.permission.BIND_WALLPAPER">
+            <intent-filter>
+                <action android:name="android.service.wallpaper.WallpaperService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/holo_wallpaper" />
+        </service>
+
+        <!--
+            NOTE: ACTION_POWER_CONNECTED and ACTION_BATTERY_LOW are NOT on the implicit-broadcast
+            exemption list, so a manifest <receiver> never fires on API 26+. PowerEventMonitor
+            registers them at runtime from HoloApp and HoloNotificationListener instead.
+        -->
+    </application>
+</manifest>

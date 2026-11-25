@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Compose draws everything; the platform theme only sets the window chrome. -->
+    <style name="Theme.HoloOS" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/pitch_black</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+
+    <!-- Launcher: let the (live) wallpaper show through behind the HUD. -->
+    <style name="Theme.HoloOS.Launcher">
+        <item name="android:windowShowWallpaper">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+    </style>
+</resources>

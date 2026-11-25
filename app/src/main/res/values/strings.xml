@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Night City Holo-OS</string>
+    <string name="launcher_label">Holo-OS HUD</string>
+    <string name="notification_listener_label">Holo-OS Audio Cues</string>
+    <string name="wallpaper_label">Night City Grid</string>
+    <string name="wallpaper_description">Procedural rain-slick skyline and neon grid with parallax and unlock glitch pulses.</string>
+
+    <!-- Hub navigation -->
+    <string name="tab_calibrate">Calibrate</string>
+    <string name="tab_audio">Audio</string>
+    <string name="tab_overrides">Overrides</string>
+    <string name="open_hud">Open HUD</string>
+
+    <!-- Setup wizard -->
+    <string name="setup_title">Neural Link Calibration</string>
+    <string name="setup_subtitle">Kiroshi optics firmware 2.0.77 // handshake pending</string>
+    <string name="setup_subtitle_done">All links nominal // optics online</string>
+    <string name="setup_one_click">Initiate one-click calibration</string>
+    <string name="setup_running">Calibrating…</string>
+    <string name="setup_sync">Sync</string>
+    <string name="setup_engage">Engage</string>
+    <string name="setup_link_established">Neural link established</string>
+    <string name="setup_link_body">Required links are online. Your sound pack is injected and the HUD is ready.</string>
+    <string name="setup_enter_hud">Enter HUD</string>
+    <string name="setup_audio_payload">Audio payload</string>
+    <string name="setup_audio_payload_body">Copies the cue files into the shared media library and sets the system ringtone, notification and alarm sounds.</string>
+    <string name="setup_inject">Inject sound pack</string>
+    <string name="setup_inject_needs_write">Grant System Write first</string>
+
+    <string name="status_online">Online</string>
+    <string name="status_offline">Offline</string>
+    <string name="status_auto">Auto</string>
+    <string name="status_optional">Optional</string>
+
+    <string name="step_notifications_title">Notification uplink</string>
+    <string name="step_notifications_body">POST_NOTIFICATIONS. Lets Holo-OS post link-status alerts with your new chirp.</string>
+    <string name="step_listener_title">Notification intercept</string>
+    <string name="step_listener_body">Notification listener access. Plays the Eddie Transfer cue for banking apps and the New Gig sting for mail.</string>
+    <string name="step_write_settings_title">System write access</string>
+    <string name="step_write_settings_body">WRITE_SETTINGS. Required to set the default ringtone, notification and alarm sounds.</string>
+    <string name="step_alarm_title">Alarm scheduling</string>
+    <string name="step_alarm_body">SET_ALARM. Granted at install. Used to schedule the apartment alarm in your clock app.</string>
+    <string name="step_overlay_title">Optics overlay</string>
+    <string name="step_overlay_body">Display over other apps (optional). Shows the Relic Malfunction glitch banner on low battery.</string>
+    <string name="step_contacts_title">Holocall roster</string>
+    <string name="step_contacts_body">Contacts (optional). Fills the Holocall widget on the home HUD with your starred contacts.</string>
+    <string name="step_wallpaper_title">Night City backdrop</string>
+    <string name="step_wallpaper_body">Live wallpaper (optional). Rain, skyline parallax and unlock glitch pulses.</string>
+    <string name="step_home_title">Default home</string>
+    <string name="step_home_body">Home app role. Replaces your launcher with the Holo-OS tactical HUD.</string>
+
+    <!-- Audio cues -->
+    <string name="cue_holocall_title">Holocall ringtone</string>
+    <string name="cue_holocall_trigger">System ringtone</string>
+    <string name="cue_chirp_title">SMS / notification chirp</string>
+    <string name="cue_chirp_trigger">System notification sound</string>
+    <string name="cue_eddie_title">Eddie Transfer</string>
+    <string name="cue_eddie_trigger">Banking and payment app notifications</string>
+    <string name="cue_gig_title">New Gig sting</string>
+    <string name="cue_gig_trigger">Priority email notifications</string>
+    <string name="cue_relic_title">Relic Malfunction</string>
+    <string name="cue_relic_trigger">Battery drops below 15%</string>
+    <string name="cue_link_title">Neural Link connected</string>
+    <string name="cue_link_trigger">Charger plugged in</string>
+    <string name="cue_alarm_title">V\'s Apartment alarm</string>
+    <string name="cue_alarm_trigger">System alarm sound</string>
+
+    <string name="audio_title">Audio and haptics engine</string>
+    <string name="audio_subtitle">Cue matrix // 7 slots</string>
+    <string name="audio_apply">Apply to system</string>
+    <string name="audio_apply_body">Sets the ringtone, notification and alarm slots as Android defaults.</string>
+    <string name="audio_preview">Preview</string>
+    <string name="audio_stop">Stop</string>
+    <string name="audio_import">Import</string>
+    <string name="audio_reset">Reset</string>
+    <string name="audio_schedule_alarm">Schedule alarm</string>
+    <string name="audio_source_custom">Custom // %1$s</string>
+    <string name="audio_source_bundled">Bundled // res/raw/%1$s</string>
+    <string name="audio_source_synth">Synth placeholder // drop a file in res/raw</string>
+    <string name="audio_triggers">Trigger matrix</string>
+    <string name="toggle_haptics">Mechanical haptics</string>
+    <string name="toggle_finance">Eddie Transfer on banking apps</string>
+    <string name="toggle_gig">New Gig sting on mail</string>
+    <string name="toggle_power">Charger and low-battery cues</string>
+    <string name="toggle_relic_banner">Relic Malfunction overlay banner</string>
+    <string name="audio_finance_apps">Eddie trigger apps</string>
+    <string name="audio_finance_apps_body">Banking apps are detected automatically. Tap to add or remove apps.</string>
+    <string name="audio_finance_edit">Edit list</string>
+    <string name="audio_gig_keywords">Priority keywords</string>
+    <string name="audio_gig_keywords_hint">e.g. urgent, offer, interview (empty = every alerting email)</string>
+    <string name="audio_applied">Sound pack injected: %1$s</string>
+    <string name="audio_apply_failed">Some slots failed: %1$s</string>
+    <string name="audio_imported">Imported %1$s</string>
+    <string name="audio_import_failed">Import failed: %1$s</string>
+    <string name="audio_needs_write">Grant System Write access in Calibrate first</string>
+    <string name="audio_alarm_failed">No clock app accepted the alarm</string>
+    <string name="done">Done</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="search_apps">Search apps</string>
+
+    <!-- Manual overrides -->
+    <string name="overrides_title">Manual overrides</string>
+    <string name="overrides_subtitle">Sandboxed settings // operator action required</string>
+    <string name="overrides_palette">Palette buffer</string>
+    <string name="overrides_palette_body">Copy a hex code, then paste it into your keyboard or theme app.</string>
+    <string name="overrides_copied">%1$s copied to clipboard</string>
+    <string name="overrides_open">Open</string>
+    <string name="overrides_backdrop">Keyboard backdrop</string>
+    <string name="overrides_backdrop_body">Gboard\'s theme creator takes an image rather than hex codes. This renders a HUD-grid backdrop into Pictures/NightCityHoloOS for Gboard: Settings > Theme > My image.</string>
+    <string name="overrides_backdrop_export">Render backdrop</string>
+    <string name="overrides_backdrop_saved">Saved to Pictures/NightCityHoloOS</string>
+    <string name="overrides_backdrop_failed">Render failed: %1$s</string>
+    <string name="overrides_unavailable">This settings screen is not available on this device</string>
+
+    <string name="override_keyboard_title">Keyboard theme</string>
+    <string name="override_keyboard_body">Enable Gboard, then Gboard settings > Theme > + and use the palette or backdrop below.</string>
+    <string name="override_display_title">Display, dark theme and AOD</string>
+    <string name="override_display_body">Turn on dark theme. On most OEMs Always-On Display lives under Display or Lock screen.</string>
+    <string name="override_sound_title">Sound and vibration</string>
+    <string name="override_sound_body">Check that the Holo-OS ringtone and chirp are selected and volume is up.</string>
+    <string name="override_battery_title">Battery optimization</string>
+    <string name="override_battery_body">Set Holo-OS to Unrestricted so charger and low-battery cues are not delayed.</string>
+    <string name="override_home_title">Default home app</string>
+    <string name="override_home_body">Fallback if the role prompt was dismissed: choose Holo-OS HUD.</string>
+    <string name="override_listener_title">Notification access</string>
+    <string name="override_listener_body">Fallback for the notification intercept link.</string>
+    <string name="override_lock_wallpaper_title">Lock screen wallpaper</string>
+    <string name="override_lock_wallpaper_body">Live wallpapers rarely apply to the lock screen. Pick a static image for it here.</string>
+
+    <!-- Launcher -->
+    <string name="hud_brand">Kiroshi optics // Night City</string>
+    <string name="hud_chrono">Kiroshi chrono</string>
+    <string name="hud_cell">Cell</string>
+    <string name="hud_neural_load">Neural load</string>
+    <string name="hud_charging">Neural link active</string>
+    <string name="hud_relic">Relic malfunction</string>
+    <string name="hud_holocall">Holocall</string>
+    <plurals name="hud_holocall_count">
+        <item quantity="one">%1$d contact</item>
+        <item quantity="other">%1$d contacts</item>
+    </plurals>
+    <string name="hud_holocall_empty">No contacts with phone numbers found</string>
+    <string name="hud_holocall_permission">Grant contact uplink to load your Holocall roster.</string>
+    <string name="hud_grant">Grant uplink</string>
+    <string name="hud_net_access">Net access</string>
+    <plurals name="hud_drawer_title">
+        <item quantity="one">Net access // %1$d daemon</item>
+        <item quantity="other">Net access // %1$d daemons</item>
+    </plurals>
+    <string name="hud_app_info">App info</string>
+    <string name="hud_uninstall">Uninstall</string>
+    <string name="hud_launch_failed">Unable to launch</string>
+    <string name="dock_phone">Holocall</string>
+    <string name="dock_messages">Messages</string>
+    <string name="dock_camera">Kiroshi Optics</string>
+    <string name="dock_browser">NetWatch</string>
+    <string name="icon_tint_cyan">Cyan</string>
+    <string name="icon_tint_yellow">Yellow</string>
+    <string name="icon_tint_duotone">Duo</string>
+    <string name="icon_frame_chamfer">Chamfer</string>
+    <string name="icon_frame_hex">Hex</string>
+
+    <!-- Notifications / overlay -->
+    <string name="channel_status_name">Link status</string>
+    <string name="channel_status_desc">Holo-OS calibration and sound pack status</string>
+    <string name="notif_link_title">Neural link established</string>
+    <string name="notif_link_body">Sound pack injected. This alert is using your new chirp.</string>
+    <string name="relic_banner_title">Relic malfunction</string>
+    <string name="relic_banner_body">Cell integrity %1$d%% // connect power</string>
+</resources>

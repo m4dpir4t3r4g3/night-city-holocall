@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Audio cues are looked up by name at runtime (Resources.getIdentifier), so the resource
+    shrinker cannot see the references. This keeps every cue_* file in release builds.
+    The exact filenames to drop in are listed in audio_slots_todo.txt (same folder).
+-->
+<resources xmlns:tools="http://schemas.android.com/tools"
+    tools:keep="@raw/cue_*" />
