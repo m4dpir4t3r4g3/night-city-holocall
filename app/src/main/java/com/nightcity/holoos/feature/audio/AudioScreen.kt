@@ -261,7 +261,10 @@ private fun CueCard(
                 Text(stringResource(slot.cue.titleRes).uppercase(), style = MaterialTheme.typography.titleMedium, color = HoloColors.TextPrimary)
                 Text(stringResource(slot.cue.triggerRes), style = MaterialTheme.typography.bodySmall, color = HoloColors.TextDim)
             }
-            slot.cue.systemSlot?.let { StatusTag(it.name, HoloColors.NeonCyan) }
+            slot.cue.systemSlot?.let {
+                Spacer(Modifier.width(8.dp))
+                StatusTag(it.name, HoloColors.NeonCyan)
+            }
         }
         Spacer(Modifier.height(6.dp))
         HudDivider()

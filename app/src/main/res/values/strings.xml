@@ -115,7 +115,7 @@
     <string name="overrides_unavailable">This settings screen is not available on this device</string>
 
     <string name="override_keyboard_title">Keyboard theme</string>
-    <string name="override_keyboard_body">Enable Gboard, then Gboard settings > Theme > + and use the palette or backdrop below.</string>
+    <string name="override_keyboard_body">Enable Gboard, then Gboard settings > Theme > + and use the palette or backdrop above.</string>
     <string name="override_display_title">Display, dark theme and AOD</string>
     <string name="override_display_body">Turn on dark theme. On most OEMs Always-On Display lives under Display or Lock screen.</string>
     <string name="override_sound_title">Sound and vibration</string>
