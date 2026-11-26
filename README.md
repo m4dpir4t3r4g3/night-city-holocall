@@ -15,6 +15,38 @@ DataStore, MVVM + Clean Architecture. minSdk 29, targetSdk 35.
 
 ---
 
+## Download
+
+Grab the latest APK from [Releases](https://github.com/m4dpir4t3r4g3/night-city-holocall/releases),
+copy it to your phone and open it. Android will ask you to allow installs from that app (Chrome,
+Files…) the first time. Requires Android 10 or newer.
+
+Every published release gets its APK attached automatically by
+[`release-apk.yml`](.github/workflows/release-apk.yml). To rebuild the APK for an existing
+release, open **Actions → Release APK → Run workflow** and enter the tag.
+
+### Signing (optional)
+
+Without a key, release APKs are signed with a throwaway debug key, so installing a newer release
+over an older one fails with "App not installed" (uninstall first). To sign every release with
+the same key, create one once and add four repository secrets
+(**Settings → Secrets and variables → Actions**):
+
+```bash
+keytool -genkeypair -v -keystore holo-release.jks -alias holo -keyalg RSA -keysize 4096 -validity 10000
+base64 -w0 holo-release.jks   # paste the output into HOLO_KEYSTORE_BASE64
+```
+
+| Secret | Value |
+| --- | --- |
+| `HOLO_KEYSTORE_BASE64` | base64 of `holo-release.jks` |
+| `HOLO_KEYSTORE_PASSWORD` | the keystore password |
+| `HOLO_KEY_ALIAS` | `holo` (or the alias you chose) |
+| `HOLO_KEY_PASSWORD` | the key password |
+
+Keep `holo-release.jks` somewhere safe and out of the repo. Losing it means users must uninstall
+to update.
+
 ## Build
 
 Requirements: JDK 17+ and the Android SDK (platform 35). Android Studio Ladybug or newer works,

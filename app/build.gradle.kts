@@ -22,6 +22,21 @@ android {
         versionName = "1.0.0"
     }
 
+    signingConfigs {
+        // Release key from the environment (set by .github/workflows/release-apk.yml from
+        // repository secrets, or export these locally). Keeping one key across releases lets
+        // installed copies update in place.
+        val keystorePath = System.getenv("HOLO_KEYSTORE_PATH")
+        if (!keystorePath.isNullOrBlank()) {
+            create("release") {
+                storeFile = file(keystorePath)
+                storePassword = System.getenv("HOLO_KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("HOLO_KEY_ALIAS")
+                keyPassword = System.getenv("HOLO_KEY_PASSWORD")
+            }
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true
@@ -30,9 +45,9 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",
             )
-            // Signed with the debug key so `assembleRelease` yields an installable APK
-            // out of the box. Swap in your own signingConfig before distributing.
-            signingConfig = signingConfigs.getByName("debug")
+            // Without a release key, fall back to the debug key so `assembleRelease` still
+            // yields an installable APK.
+            signingConfig = signingConfigs.findByName("release") ?: signingConfigs.getByName("debug")
         }
     }
 
