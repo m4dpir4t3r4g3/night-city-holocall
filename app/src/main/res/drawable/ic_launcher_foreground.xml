@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Original "optic" mark: hexagonal housing, iris ring and core. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path
+        android:pathData="M54,28L76.5,41L76.5,67L54,80L31.5,67L31.5,41Z"
+        android:strokeWidth="3"
+        android:strokeColor="#00F0FF"
+        android:strokeLineJoin="miter" />
+    <path
+        android:pathData="M54,43a11,11 0,1 1,0 22a11,11 0,1 1,0 -22"
+        android:strokeWidth="3"
+        android:strokeColor="#FCEE0A" />
+    <path
+        android:fillColor="#FF003C"
+        android:pathData="M54,50a4,4 0,1 1,0 8a4,4 0,1 1,0 -8" />
+    <path
+        android:pathData="M24,54h6M78,54h6"
+        android:strokeWidth="2"
+        android:strokeColor="#00F0FF" />
+</vector>

@@ -1,0 +1,36 @@
+NIGHT CITY HOLO-OS :: AUDIO SLOT MANIFEST
+=========================================
+
+Drop your own audio files into THIS folder (app/src/main/res/raw/) before building.
+Every slot is optional. A slot with no file uses the built-in Holo-OS synth cue
+(original gritty synth/glitch designs rendered on-device), so the app always builds
+and always has a sound.
+You can also skip this folder entirely and import files at runtime from the
+AUDIO tab (file picker). Imported files override bundled ones.
+
+RULES
+  * Use the exact base name below. Supported extensions: .ogg  .mp3  .wav  .m4a  .flac
+  * Lowercase letters, digits and underscores only (Android resource naming rules).
+  * ONE file per slot: cue_eddie_transfer.ogg and cue_eddie_transfer.mp3 together
+    is a "Duplicate resources" build error.
+  * Short cues (< 2 s) work best for everything except the ringtone and alarm.
+
+  TODO  Slot                               Expected filename (any supported extension)
+  ----  ---------------------------------  -------------------------------------------
+  [ ]   Holocall Ringtone                  cue_holocall_ringtone.ogg
+  [ ]   Default SMS / Notification Chirp   cue_notification_chirp.ogg
+  [ ]   Eddie Transfer (banking/payments)  cue_eddie_transfer.ogg
+  [ ]   New Gig / Priority Email Sting     cue_new_gig.ogg
+  [ ]   Relic Malfunction (battery < 15%)  cue_relic_malfunction.ogg
+  [ ]   Neural Link Connected (charger)    cue_neural_link.ogg
+  [ ]   V's Apartment Alarm                cue_apartment_alarm.ogg
+
+WHERE EACH SLOT GOES
+  Holocall Ringtone          -> system default ringtone      (needs WRITE_SETTINGS)
+  Notification Chirp         -> system default notification  (needs WRITE_SETTINGS)
+  V's Apartment Alarm        -> system default alarm sound   (needs WRITE_SETTINGS)
+  Eddie Transfer / New Gig   -> played by the notification listener per app
+  Relic Malfunction / Link   -> played by the power-event monitor
+
+The mapping lives in domain/model/AudioCue.kt (rawResourceName) if you want to rename slots.
+Only bundle audio you have the rights to use.

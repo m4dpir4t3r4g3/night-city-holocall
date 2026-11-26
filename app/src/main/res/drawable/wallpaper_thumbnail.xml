@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    <path android:fillColor="#050508" android:pathData="M0,0h200v200h-200z" />
+    <path android:fillColor="#0D1117" android:pathData="M0,60h200v76h-200z" />
+    <!-- skyline -->
+    <path
+        android:fillColor="#101826"
+        android:pathData="M0,136V96h14V74h18v62h8V58h20v78h10V84h16v52h12V66h22v70h8V90h18v46h10V70h20v66h24V136Z" />
+    <path
+        android:fillColor="#00F0FF"
+        android:pathData="M46,64h6v2h-6zM104,74h8v2h-8zM154,80h6v2h-6zM20,82h4v2h-4z" />
+    <path android:fillColor="#FCEE0A" android:pathData="M74,92h10v3h-10z" />
+    <path android:fillColor="#FF003C" android:pathData="M132,100h12v2h-12z" />
+    <!-- grid floor -->
+    <path
+        android:pathData="M0,136h200M0,146h200M0,160h200M0,180h200M100,136L-60,200M100,136L20,200M100,136L100,200M100,136L180,200M100,136L260,200"
+        android:strokeWidth="1"
+        android:strokeColor="#8000F0FF" />
+    <!-- rain -->
+    <path
+        android:pathData="M30,10l-3,14M70,30l-3,14M120,8l-3,14M160,40l-3,14M190,14l-3,14M50,100l-3,14M140,110l-3,14M10,60l-3,14"
+        android:strokeWidth="1"
+        android:strokeColor="#6600F0FF" />
+</vector>
