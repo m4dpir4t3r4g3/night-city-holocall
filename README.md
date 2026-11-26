@@ -50,7 +50,8 @@ Every slot is optional. Each cue resolves through a fallback chain:
 
 1. **Imported at runtime** (Audio tab → Import; the file is copied into app storage)
 2. **Bundled** in `res/raw`
-3. **Synthesized placeholder**: an original tone generated on-device, so the app builds and works with no audio at all
+3. **Built-in Holo-OS synth**: original cyberpunk-style cues (detuned saws, metallic FM pings,
+   bit-crush, stutter and tape-stop glitches) rendered on-device, so the app works with no audio files at all
 
 Cues are looked up by name at runtime, so missing files never break the build.
 `res/raw/keep.xml` stops the release resource shrinker from stripping them. Only bundle audio you
@@ -129,8 +130,8 @@ dependencies, so it can be split into its own module later without changes.
 This is an unofficial fan customization project, not affiliated with or endorsed by CD PROJEKT.
 "Cyberpunk 2077" and in-universe names used as UI labels (Kiroshi, Militech, NetWatch, Relic,
 eddies…) are trademarks of their owners. No game assets are included. All visuals are drawn
-procedurally, the app icon is an original design, and the placeholder sounds are synthesized
-on-device. Every label lives in `res/values/strings.xml`, so the whole suite can be renamed in
+procedurally, the app icon is an original design, and the built-in sounds are original designs
+synthesized on-device. Every label lives in `res/values/strings.xml`, so the whole suite can be renamed in
 one place before you share it anywhere.
 
 Fonts: Orbitron, Rajdhani and Share Tech Mono, bundled under the SIL Open Font License 1.1

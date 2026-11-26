@@ -2,8 +2,9 @@ NIGHT CITY HOLO-OS :: AUDIO SLOT MANIFEST
 =========================================
 
 Drop your own audio files into THIS folder (app/src/main/res/raw/) before building.
-Every slot is optional. A slot with no file falls back to a procedurally synthesized
-placeholder tone generated on-device, so the app always builds and always has a sound.
+Every slot is optional. A slot with no file uses the built-in Holo-OS synth cue
+(original gritty synth/glitch designs rendered on-device), so the app always builds
+and always has a sound.
 You can also skip this folder entirely and import files at runtime from the
 AUDIO tab (file picker). Imported files override bundled ones.
 

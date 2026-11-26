@@ -30,7 +30,7 @@ import javax.inject.Singleton
  * Resolves each cue through the fallback chain:
  *   1. user import (copied into filesDir/custom_cues)
  *   2. bundled res/raw/<rawResourceName>.*
- *   3. on-device synthesized placeholder
+ *   3. built-in on-device synthesized cue
  */
 @Singleton
 class AudioCueRepositoryImpl @Inject constructor(

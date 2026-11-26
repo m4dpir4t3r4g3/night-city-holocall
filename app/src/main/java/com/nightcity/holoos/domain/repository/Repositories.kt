@@ -27,7 +27,7 @@ interface AudioCueRepository {
 
     suspend fun clearCustomCue(cue: AudioCue)
 
-    /** A URI MediaPlayer can open. Always resolves (falls back to the synth placeholder). */
+    /** A URI MediaPlayer can open. Always resolves (falls back to the built-in synth cue). */
     suspend fun playableUri(cue: AudioCue): String
 
     /** Writes the cue into MediaStore.Audio with ringtone/notification/alarm flags. */

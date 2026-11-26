@@ -7,7 +7,7 @@ import java.io.File
 import javax.inject.Inject
 import javax.inject.Singleton
 
-/** Renders synthesized placeholder cues to WAV files once and caches them in app storage. */
+/** Renders the built-in synthesized cues to WAV files once and caches them in app storage. */
 @Singleton
 class SynthCueCache @Inject constructor(
     @ApplicationContext private val context: Context,
@@ -27,6 +27,6 @@ class SynthCueCache @Inject constructor(
 
     private companion object {
         /** Bump when the synth designs change so cached files are regenerated. */
-        const val VERSION = 1
+        const val VERSION = 2
     }
 }

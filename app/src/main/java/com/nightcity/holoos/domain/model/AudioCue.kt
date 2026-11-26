@@ -29,7 +29,7 @@ sealed interface CueSource {
     /** Dropped into res/raw before building. */
     data class Bundled(val fileName: String) : CueSource
 
-    /** No file supplied: an on-device synthesized placeholder. */
+    /** No file supplied: the built-in on-device synthesized cue. */
     data object Synthesized : CueSource
 }
 

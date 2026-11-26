@@ -77,7 +77,7 @@
     <string name="audio_schedule_alarm">Schedule alarm</string>
     <string name="audio_source_custom">Custom // %1$s</string>
     <string name="audio_source_bundled">Bundled // res/raw/%1$s</string>
-    <string name="audio_source_synth">Synth placeholder // drop a file in res/raw</string>
+    <string name="audio_source_synth">Holo-OS synth // import or bundle a file to replace</string>
     <string name="audio_triggers">Trigger matrix</string>
     <string name="toggle_haptics">Mechanical haptics</string>
     <string name="toggle_finance">Eddie Transfer on banking apps</string>
